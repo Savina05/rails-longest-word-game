@@ -1,0 +1,22 @@
+<br>
+<h3>Here is your grid:</h3>
+<br>
+<br>
+
+<ul class="letters">
+  <% @letters.each do |letter| %>
+  <span><%= letter %></span>
+  <% end %>
+</ul>
+
+<br>
+<br>
+
+<form action="/score" method="POST" class="container">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <div class="d-flex">
+    <input class="form-control" name="word" type="text" placeholder="Enter your word here...">
+    <input class="btn btn-primary" type="submit" value="SUBMIT">
+  </div>
+</form>

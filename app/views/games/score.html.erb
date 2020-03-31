@@ -1,0 +1,15 @@
+<h2>This is the score page</h2>
+
+<% if @included %>
+  <% if @check %>
+  <p>Congratulations! <%= @word %> is a valid English word.</p>
+  <% else %>
+  <p>Sorry, <%= @word %> is not an English word.</p>
+  <% end %>
+<% else %>
+  <p>Sorry, <%= @word %> is not included in <%= @letters.join(", ") %></p>
+<% end %>
+
+<br>
+<br>
+<p><%= link_to 'Play again', new_path %></p>
